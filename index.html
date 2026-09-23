@@ -100,6 +100,7 @@
     .card[data-id="P06"].run .parallax-stage { animation-name: background-diagonal; }
     .card[data-id="P07"].run .parallax-stage { animation-name: background-zoom-in; }
     .card[data-id="P08"].run .parallax-stage { animation-name: background-zoom-out; }
+    .card[data-id="P09"].run .parallax-stage { animation-name: background-knox-float; }
     @keyframes background-rise { to { transform: translateY(-7%) scale(1.07); } }
     @keyframes background-deep { to { transform: translateY(-13%) scale(1.12); } }
     @keyframes background-reverse { to { transform: translateY(8%) scale(1.1); } }
@@ -108,6 +109,7 @@
     @keyframes background-diagonal { to { transform: translate(-7%, -8%) scale(1.13); } }
     @keyframes background-zoom-in { to { transform: scale(1.22); } }
     @keyframes background-zoom-out { from { transform: scale(1.22); } to { transform: scale(1.07); } }
+    @keyframes background-knox-float { from { transform: translateY(6%) scale(1.1); } to { transform: translateY(-6%) scale(1.1); } }
     .parallax-label { position: relative; z-index: 1; align-self: end; width: 100%; color: #fff; font: 400 28px/1.05 Georgia, serif; text-shadow: 0 1px 12px rgb(0 0 0 / 35%); }
     .component-preview { place-items: stretch; background: #e7ebe3; }
     .component-ui { display: grid; align-content: center; gap: 10px; width: 100%; }
@@ -162,7 +164,7 @@
           <p>Preview every reusable effect and component by name. This public gallery contains demonstrations only; complete Elementor and PHP source remains private.</p>
           <div class="stats">
             <div class="stat"><strong>24</strong><span>Heading effects</span></div>
-            <div class="stat"><strong>08</strong><span>Background effects</span></div>
+            <div class="stat"><strong>09</strong><span>Background effects</span></div>
             <div class="stat"><strong>07</strong><span>Reusable components</span></div>
           </div>
         </div>
@@ -206,7 +208,7 @@
       ['H01','Gentle Rise','we-h-gentle-rise','A calm upward entrance.'],['H02','Soft Fade','we-h-soft-fade','Opacity-only entrance.'],['H03','Editorial Rise','we-h-rise','A stronger upward entrance.'],['H04','Soft Drop','we-h-drop','Arrives gently from above.'],['H05','Slide from Left','we-h-from-left','Moves in from the left.'],['H06','Slide from Right','we-h-from-right','Moves in from the right.'],['H07','Diagonal Rise','we-h-diagonal-rise','Moves diagonally into place.'],['H08','Quiet Zoom In','we-h-zoom-in','Grows gently into place.'],['H09','Quiet Zoom Out','we-h-zoom-out','Settles from a larger size.'],['H10','Focus Fade','we-h-blur-focus','Clears a soft blur.'],['H11','Focus Rise','we-h-blur-rise','Clears a blur while rising.'],['H12','Tilt and Rise','we-h-tilt-rise','A small rotation settles flat.'],['H13','Wipe Up','we-h-wipe-up','Uncovers from the bottom.'],['H14','Wipe Down','we-h-wipe-down','Uncovers from the top.'],['H15','Wipe Right','we-h-wipe-right','Uncovers from left to right.'],['H16','Wipe Left','we-h-wipe-left','Uncovers from right to left.'],['H17','Centre Open','we-h-centre-open','Opens outward from the centre.'],['H18','Soft Flip','we-h-soft-flip','A shallow perspective entrance.'],['H19','Word Rise','we-h-word-rise','Words rise in sequence.'],['H20','Word Fade','we-h-word-fade','Words fade in sequence.'],['H21','Word Slide','we-h-word-slide','Words slide in sequence.'],['H22','Word Focus','we-h-word-focus','Words sharpen in sequence.'],['H23','Letter Rise','we-h-letter-rise','Letters rise in sequence.'],['H24','YO·GÜD Reveal','we-h-yogud-reveal','A wider editorial reveal.']
     ];
     const backgrounds = [
-      ['P01','Background Gentle Rise','we-p-gentle-rise','Subtle upward background movement.'],['P02','Background Deep Rise','we-p-deep-rise','Stronger upward background movement.'],['P03','Background Reverse','we-p-reverse','Moves in the reverse direction.'],['P04','Background Drift Left','we-p-drift-left','Horizontal movement to the left.'],['P05','Background Drift Right','we-p-drift-right','Horizontal movement to the right.'],['P06','Background Diagonal','we-p-diagonal','Diagonal background movement.'],['P07','Background Zoom In','we-p-zoom-in','Slow background zoom in.'],['P08','Background Zoom Out','we-p-zoom-out','Slow background zoom out.']
+      ['P01','Background Gentle Rise','we-p-gentle-rise','Subtle upward background movement.'],['P02','Background Deep Rise','we-p-deep-rise','Stronger upward background movement.'],['P03','Background Reverse','we-p-reverse','Moves in the reverse direction.'],['P04','Background Drift Left','we-p-drift-left','Horizontal movement to the left.'],['P05','Background Drift Right','we-p-drift-right','Horizontal movement to the right.'],['P06','Background Diagonal','we-p-diagonal','Diagonal background movement.'],['P07','Background Zoom In','we-p-zoom-in','Slow background zoom in.'],['P08','Background Zoom Out','we-p-zoom-out','Slow background zoom out.'],['P09','Knox Gentle Float','we-p-knox-gentle-float','A restrained 60px image float with 1.1 overscan, synced smoothly to the full viewport pass.']
     ];
     const components = [
       {id:'W08–W10',name:'Native Widget Details',description:'Arrow Turn, Circle Arrow and Outer Round Tabs for native Elementor widgets.',preview:'details'},
