@@ -1,4 +1,291 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hover Image Box — Live Preview</title><style>
-:root{--paper:#f4f1e9;--ink:#243029;--muted:#68736c;--accent:#a99661}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 Arial,sans-serif}.page{width:min(1120px,calc(100% - 32px));margin:auto;padding:64px 0 80px}.eyebrow{margin:0 0 12px;color:#6d795f;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}h1{max-width:800px;margin:0;font:400 clamp(44px,7vw,88px)/.98 Georgia,serif;letter-spacing:-.045em}.intro{max-width:680px;margin:24px 0 42px;color:var(--muted)}.stage{display:grid;grid-template-columns:minmax(280px,520px) minmax(240px,1fr);gap:48px;align-items:center}.hover-box{--duration:650ms;--zoom:1.065;position:relative;height:570px;overflow:hidden;border-radius:22px;isolation:isolate;box-shadow:0 26px 60px rgb(31 44 36/.18)}.hover-box img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1);transition:transform var(--duration) cubic-bezier(.16,1,.3,1);will-change:transform}.hover-box:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 32%,rgb(8 14 11/.32));pointer-events:none}.content{position:absolute;z-index:2;right:0;bottom:0;left:0;padding:26px 28px 28px;color:#fff;background:rgb(20 24 21/.72);border-radius:18px 18px 0 0;backdrop-filter:blur(5px);transform:translateZ(0)}h2{max-width:100%;margin:0;font:700 clamp(28px,4vw,44px)/1.05 Georgia,serif;overflow-wrap:anywhere;text-wrap:pretty}.reveal{display:grid;grid-template-rows:0fr;opacity:.15;transition:grid-template-rows var(--duration) cubic-bezier(.16,1,.3,1),opacity 380ms ease}.reveal-inner{min-height:0;overflow:hidden}.reveal p{margin:14px 0 18px;color:rgb(255 255 255/.88)}.button{display:inline-flex;padding:11px 18px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;transition:transform 300ms ease,background 300ms ease}.button:hover{background:#bdab73;transform:translateY(-2px)}.hover-box:hover img,.hover-box:focus-within img{transform:scale(var(--zoom))}.hover-box:hover .reveal,.hover-box:focus-within .reveal{grid-template-rows:1fr;opacity:1}.notes{display:grid;gap:14px}.note{padding:18px 20px;border:1px solid #d9ddd4;border-radius:14px;background:rgb(255 255 255/.48)}.note strong{display:block;margin-bottom:3px;font:700 18px/1.2 Georgia,serif}.privacy{margin-top:42px;padding-top:20px;border-top:1px solid #d9ddd4;color:var(--muted);font-size:13px}@media(max-width:760px){.page{padding-top:40px}.stage{grid-template-columns:1fr;gap:28px}.hover-box{height:480px}.notes{grid-template-columns:1fr 1fr}}@media(max-width:520px){.notes{grid-template-columns:1fr}.hover-box{height:430px}.content{padding:22px}.reveal{grid-template-rows:1fr;opacity:1}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important}}
-</style></head><body><main class="page"><p class="eyebrow">Elementor Widget Effect Preview</p><h1>Hover Image Box</h1><p class="intro">Move over the image to preview the smooth content reveal. This public page demonstrates only the front-end effect; the complete Elementor PHP widget remains in the private code library.</p><section class="stage" aria-label="Hover Image Box demonstration"><article class="hover-box"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Quiet forest retreat"><div class="content"><h2>The Retreat</h2><div class="reveal"><div class="reveal-inner"><p>A calm, flexible image card with a fluid reveal, readable wrapped heading and optional call to action.</p><a class="button" href="#features">Explore</a></div></div></div></article><div class="notes" id="features"><div class="note"><strong>Single image</strong>No multi-column structure inside the widget.</div><div class="note"><strong>Smooth reveal</strong>Grid-based motion avoids the jerky height calculation seen in earlier versions.</div><div class="note"><strong>Flexible links</strong>Supports a button link, whole-box link or no link.</div><div class="note"><strong>Editable styling</strong>Image height, radius, overlay, typography, icon and button are configurable in Elementor.</div></div></section><p class="privacy">Public demonstration only. No WordPress PHP, plugin registration code, client data or commercial source files are included.</p></main></body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vivian Effects — Live Preview</title>
+  <style>
+    :root {
+      --ink: #20251f;
+      --muted: #667064;
+      --line: #d8ddd4;
+      --paper: #f4f2ec;
+      --card: #fffdf8;
+      --green: #304b39;
+      --sage: #84947a;
+      --orange: #c85b32;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font: 15px/1.55 Arial, Helvetica, sans-serif; }
+    button, input { font: inherit; }
+    button, a { touch-action: manipulation; }
+    a { color: inherit; }
+    :focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
+    .shell { width: min(1480px, calc(100% - 40px)); margin-inline: auto; }
+    header { padding: 58px 0 42px; border-bottom: 1px solid var(--line); }
+    .eyebrow { margin: 0 0 14px; color: var(--green); font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    .hero { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(260px, .7fr); gap: 50px; align-items: end; }
+    h1 { max-width: 900px; margin: 0; font: 400 clamp(46px, 6.8vw, 98px)/.98 Georgia, serif; letter-spacing: -.045em; }
+    h1 em { color: var(--sage); font-weight: 400; }
+    .hero-copy { max-width: 43ch; color: var(--muted); }
+    .stats { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .stat { min-width: 120px; padding: 12px 15px; background: rgb(255 255 255 / 55%); border: 1px solid var(--line); border-radius: 8px; }
+    .stat strong { display: block; font: 400 25px/1 Georgia, serif; }
+    .stat span { display: block; margin-top: 5px; color: var(--muted); font-size: 11px; }
+    .toolbar-wrap { position: sticky; z-index: 20; top: 0; background: rgb(244 242 236 / 94%); border-bottom: 1px solid var(--line); backdrop-filter: blur(12px); }
+    .toolbar { display: flex; gap: 12px; align-items: center; padding: 14px 0; }
+    #search { flex: 1; min-width: 180px; padding: 11px 13px; color: var(--ink); background: var(--card); border: 1px solid var(--line); border-radius: 6px; }
+    .filters { display: flex; flex-wrap: wrap; gap: 7px; }
+    .filter, .action, .replay { padding: 9px 12px; color: var(--ink); background: var(--card); border: 1px solid var(--line); border-radius: 6px; cursor: pointer; text-decoration: none; }
+    .filter[aria-pressed="true"], .action.primary { color: #fff; background: var(--green); border-color: var(--green); }
+    main { padding: 38px 0 80px; }
+    .section { margin-top: 50px; scroll-margin-top: 92px; }
+    .section:first-child { margin-top: 0; }
+    .section-head { display: flex; justify-content: space-between; gap: 20px; align-items: end; margin-bottom: 18px; }
+    h2 { margin: 0; font: 400 clamp(31px, 4vw, 50px)/1.05 Georgia, serif; letter-spacing: -.025em; }
+    .section-note { max-width: 58ch; margin: 0; color: var(--muted); }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .card { min-width: 0; overflow: hidden; background: var(--card); border: 1px solid var(--line); border-radius: 10px; }
+    .preview { position: relative; display: grid; min-height: 190px; padding: 24px; place-items: center; overflow: hidden; background: #ecefe7; border-bottom: 1px solid var(--line); }
+    .preview-heading { max-width: 100%; font: 400 clamp(24px, 2.7vw, 42px)/1.08 Georgia, serif; text-align: center; letter-spacing: -.025em; }
+    .preview-heading em { color: var(--sage); font-weight: 400; }
+    .card.run .preview-heading { animation: library-entry 760ms cubic-bezier(.22,1,.36,1) both; }
+    .card[data-id="H02"].run .preview-heading { animation-name: fade; }
+    .card[data-id="H03"].run .preview-heading { animation-name: deep-rise; }
+    .card[data-id="H04"].run .preview-heading { animation-name: drop; }
+    .card[data-id="H05"].run .preview-heading { animation-name: from-left; }
+    .card[data-id="H06"].run .preview-heading { animation-name: from-right; }
+    .card[data-id="H07"].run .preview-heading { animation-name: diagonal; }
+    .card[data-id="H08"].run .preview-heading { animation-name: zoom-in; }
+    .card[data-id="H09"].run .preview-heading { animation-name: zoom-out; }
+    .card[data-id="H10"].run .preview-heading { animation-name: focus; }
+    .card[data-id="H11"].run .preview-heading { animation-name: focus-rise; }
+    .card[data-id="H12"].run .preview-heading { animation-name: tilt-rise; }
+    .card[data-id="H13"].run .preview-heading { animation-name: wipe-up; }
+    .card[data-id="H14"].run .preview-heading { animation-name: wipe-down; }
+    .card[data-id="H15"].run .preview-heading { animation-name: wipe-right; }
+    .card[data-id="H16"].run .preview-heading { animation-name: wipe-left; }
+    .card[data-id="H17"].run .preview-heading { animation-name: centre-open; }
+    .card[data-id="H18"].run .preview-heading { animation-name: soft-flip; transform-origin: 50% 100%; }
+    .card[data-id^="H2"].run .preview-heading, .card[data-id="H19"].run .preview-heading { animation-name: word-entry; }
+    @keyframes library-entry { from { opacity: 0; transform: translateY(18px); } }
+    @keyframes fade { from { opacity: 0; } }
+    @keyframes deep-rise { from { opacity: 0; transform: translateY(42px); } }
+    @keyframes drop { from { opacity: 0; transform: translateY(-24px); } }
+    @keyframes from-left { from { opacity: 0; transform: translateX(-35px); } }
+    @keyframes from-right { from { opacity: 0; transform: translateX(35px); } }
+    @keyframes diagonal { from { opacity: 0; transform: translate(-28px, 28px); } }
+    @keyframes zoom-in { from { opacity: 0; transform: scale(.88); } }
+    @keyframes zoom-out { from { opacity: 0; transform: scale(1.12); } }
+    @keyframes focus { from { opacity: 0; filter: blur(10px); } }
+    @keyframes focus-rise { from { opacity: 0; filter: blur(10px); transform: translateY(18px); } }
+    @keyframes tilt-rise { from { opacity: 0; transform: translateY(22px) rotate(-3deg); } }
+    @keyframes wipe-up { from { clip-path: inset(100% 0 0); transform: translateY(12px); } }
+    @keyframes wipe-down { from { clip-path: inset(0 0 100%); transform: translateY(-12px); } }
+    @keyframes wipe-right { from { clip-path: inset(0 100% 0 0); } }
+    @keyframes wipe-left { from { clip-path: inset(0 0 0 100%); } }
+    @keyframes centre-open { from { clip-path: inset(0 50%); } }
+    @keyframes soft-flip { from { opacity: 0; transform: perspective(500px) rotateX(28deg); } }
+    @keyframes word-entry { from { opacity: 0; transform: translateY(22px); filter: blur(4px); } }
+    .parallax-stage { position: absolute; inset: -18%; background: linear-gradient(135deg, #20382a, #819576 56%, #d4b68b); transform: scale(1.07); }
+    .parallax-stage::before, .parallax-stage::after { content: ""; position: absolute; border-radius: 50%; background: rgb(255 255 255 / 25%); }
+    .parallax-stage::before { width: 46%; aspect-ratio: 1; top: 18%; left: 16%; }
+    .parallax-stage::after { width: 30%; aspect-ratio: 1; right: 16%; bottom: 8%; }
+    .card.run .parallax-stage { animation: background-rise 2.8s ease-in-out infinite alternate; }
+    .card[data-id="P02"].run .parallax-stage { animation-name: background-deep; }
+    .card[data-id="P03"].run .parallax-stage { animation-name: background-reverse; }
+    .card[data-id="P04"].run .parallax-stage { animation-name: background-left; }
+    .card[data-id="P05"].run .parallax-stage { animation-name: background-right; }
+    .card[data-id="P06"].run .parallax-stage { animation-name: background-diagonal; }
+    .card[data-id="P07"].run .parallax-stage { animation-name: background-zoom-in; }
+    .card[data-id="P08"].run .parallax-stage { animation-name: background-zoom-out; }
+    @keyframes background-rise { to { transform: translateY(-7%) scale(1.07); } }
+    @keyframes background-deep { to { transform: translateY(-13%) scale(1.12); } }
+    @keyframes background-reverse { to { transform: translateY(8%) scale(1.1); } }
+    @keyframes background-left { to { transform: translateX(-8%) scale(1.12); } }
+    @keyframes background-right { to { transform: translateX(8%) scale(1.12); } }
+    @keyframes background-diagonal { to { transform: translate(-7%, -8%) scale(1.13); } }
+    @keyframes background-zoom-in { to { transform: scale(1.22); } }
+    @keyframes background-zoom-out { from { transform: scale(1.22); } to { transform: scale(1.07); } }
+    .parallax-label { position: relative; z-index: 1; align-self: end; width: 100%; color: #fff; font: 400 28px/1.05 Georgia, serif; text-shadow: 0 1px 12px rgb(0 0 0 / 35%); }
+    .component-preview { place-items: stretch; background: #e7ebe3; }
+    .component-ui { display: grid; align-content: center; gap: 10px; width: 100%; }
+    .mini-header { display: flex; align-items: center; justify-content: space-between; gap: 8px; height: 42px; padding: 0 12px; color: #fff; background: var(--green); border-radius: 5px; }
+    .mini-header .mark { width: 54px; height: 8px; background: currentColor; border-radius: 8px; }
+    .mini-header .nav { display: flex; gap: 7px; }
+    .mini-header .nav i { width: 20px; height: 4px; background: currentColor; border-radius: 4px; opacity: .8; }
+    .mini-header.solid { color: var(--ink); background: #fff; box-shadow: 0 5px 18px rgb(31 45 36 / 12%); }
+    .mini-tabs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; }
+    .mini-tabs span { display: grid; min-height: 58px; padding: 8px; place-items: end start; color: #fff; background: linear-gradient(145deg, var(--sage), var(--green)); border-radius: 4px; font-size: 10px; }
+    .mini-panel { display: grid; grid-template-columns: 1fr 1.2fr; gap: 8px; height: 58px; padding: 8px; background: #fff; border: 1px solid var(--line); border-radius: 4px; }
+    .mini-panel i { display: block; background: #dce2d8; }
+    .mini-details { display: flex; gap: 10px; align-items: center; justify-content: center; }
+    .mini-details i { display: grid; width: 50px; height: 50px; place-items: center; color: #fff; background: var(--green); border-radius: 50%; font-style: normal; }
+    .mini-accordion { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; height: 120px; }
+    .mini-accordion i { background: linear-gradient(180deg, #96a38f, #344a3a); border-radius: 5px; }
+    .mini-accordion i:nth-child(2) { grid-column: span 1; transform: scaleX(1.12); }
+    .mini-hover-box { position: relative; display: flex; align-items: end; width: 100%; min-height: 170px; overflow: hidden; color: #fff; background: linear-gradient(145deg, #91a584, #294234); border-radius: 8px; }
+    .mini-hover-box::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 72% 22%, rgb(255 255 255 / 35%), transparent 36%), linear-gradient(180deg, transparent 35%, rgb(0 0 0 / 30%)); transition: transform 500ms ease; }
+    .mini-hover-caption { position: relative; z-index: 1; width: 100%; padding: 14px; background: rgb(20 20 20 / 62%); }
+    .mini-hover-title { font: 700 18px/1.1 Georgia, serif; }
+    .mini-hover-reveal { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 500ms ease; }
+    .mini-hover-reveal > span { min-height: 0; overflow: hidden; }
+    .mini-hover-text { display: block; margin-top: 8px; font-size: 11px; line-height: 1.35; }
+    .card:hover .mini-hover-box::before, .card:focus-within .mini-hover-box::before { transform: scale(1.1); }
+    .card:hover .mini-hover-reveal, .card:focus-within .mini-hover-reveal { grid-template-rows: 1fr; }
+    .body { padding: 18px; }
+    .meta { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .code-id { color: var(--green); font: 700 11px/1 monospace; letter-spacing: .08em; }
+    .type { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .08em; }
+    h3 { margin: 10px 0 7px; font: 400 24px/1.12 Georgia, serif; }
+    .description { min-height: 46px; margin: 0; color: var(--muted); font-size: 13px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 16px; }
+    .action, .replay { font-size: 12px; }
+    .replay { position: absolute; z-index: 3; top: 10px; right: 10px; padding: 6px 8px; background: rgb(255 253 248 / 88%); }
+    .empty { display: none; padding: 55px 20px; color: var(--muted); text-align: center; border: 1px dashed var(--line); border-radius: 10px; }
+    #notice { position: fixed; z-index: 40; right: 20px; bottom: 20px; max-width: 320px; padding: 11px 15px; color: #fff; background: var(--green); border-radius: 6px; box-shadow: 0 10px 28px rgb(0 0 0 / 18%); }
+    #notice:empty { display: none; }
+    footer { padding: 30px 0 45px; color: var(--muted); border-top: 1px solid var(--line); font-size: 12px; }
+    @media (max-width: 1040px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .hero { grid-template-columns: 1fr; gap: 24px; } }
+    @media (max-width: 700px) { .shell { width: min(100% - 28px, 1480px); } header { padding-top: 36px; } .toolbar { align-items: stretch; flex-direction: column; } .grid { grid-template-columns: 1fr; } .section-head { display: block; } .section-note { margin-top: 10px; } .preview { min-height: 165px; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .card.run .preview-heading, .card.run .parallax-stage { animation: none !important; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="shell">
+      <p class="eyebrow">Vivian Effects · Public Preview</p>
+      <div class="hero">
+        <div><h1>Browse every effect.<br><em>Keep the source private.</em></h1></div>
+        <div class="hero-copy">
+          <p>Preview every reusable effect and component by name. This public gallery contains demonstrations only; complete Elementor and PHP source remains private.</p>
+          <div class="stats">
+            <div class="stat"><strong>24</strong><span>Heading effects</span></div>
+            <div class="stat"><strong>08</strong><span>Background effects</span></div>
+            <div class="stat"><strong>07</strong><span>Reusable components</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="toolbar-wrap">
+    <div class="shell toolbar">
+      <input id="search" type="search" placeholder="Search by name, ID or purpose" aria-label="Search the code library">
+      <div class="filters" aria-label="Filter components">
+        <button class="filter" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter" data-filter="heading" aria-pressed="false">Headings</button>
+        <button class="filter" data-filter="background" aria-pressed="false">Backgrounds</button>
+        <button class="filter" data-filter="component" aria-pressed="false">Components</button>
+      </div>
+    </div>
+  </div>
+
+  <main class="shell">
+    <section class="section" data-section="heading">
+      <div class="section-head"><h2>Heading effects</h2><p class="section-note">Add the shown class to an Elementor Heading widget. Install the shared heading engine once per website.</p></div>
+      <div class="grid" id="heading-grid"></div>
+    </section>
+    <section class="section" data-section="background">
+      <div class="section-head"><h2>Background movement</h2><p class="section-note">Add the class to an Elementor Container with a background image. Install the parallax engine once per website.</p></div>
+      <div class="grid" id="background-grid"></div>
+    </section>
+    <section class="section" data-section="component">
+      <div class="section-head"><h2>Elementor components</h2><p class="section-note">Complete reusable patterns with installation instructions. Normal page content remains editable in Elementor.</p></div>
+      <div class="grid" id="component-grid"></div>
+    </section>
+    <div class="empty" id="empty">No matching code found.</div>
+  </main>
+
+  <footer><div class="shell">Public effect preview only. Complete WordPress, Elementor and PHP source remains in the private repository.</div></footer>
+  <div id="notice" role="status" aria-live="polite"></div>
+
+  <script>
+    const headings = [
+      ['H01','Gentle Rise','we-h-gentle-rise','A calm upward entrance.'],['H02','Soft Fade','we-h-soft-fade','Opacity-only entrance.'],['H03','Editorial Rise','we-h-rise','A stronger upward entrance.'],['H04','Soft Drop','we-h-drop','Arrives gently from above.'],['H05','Slide from Left','we-h-from-left','Moves in from the left.'],['H06','Slide from Right','we-h-from-right','Moves in from the right.'],['H07','Diagonal Rise','we-h-diagonal-rise','Moves diagonally into place.'],['H08','Quiet Zoom In','we-h-zoom-in','Grows gently into place.'],['H09','Quiet Zoom Out','we-h-zoom-out','Settles from a larger size.'],['H10','Focus Fade','we-h-blur-focus','Clears a soft blur.'],['H11','Focus Rise','we-h-blur-rise','Clears a blur while rising.'],['H12','Tilt and Rise','we-h-tilt-rise','A small rotation settles flat.'],['H13','Wipe Up','we-h-wipe-up','Uncovers from the bottom.'],['H14','Wipe Down','we-h-wipe-down','Uncovers from the top.'],['H15','Wipe Right','we-h-wipe-right','Uncovers from left to right.'],['H16','Wipe Left','we-h-wipe-left','Uncovers from right to left.'],['H17','Centre Open','we-h-centre-open','Opens outward from the centre.'],['H18','Soft Flip','we-h-soft-flip','A shallow perspective entrance.'],['H19','Word Rise','we-h-word-rise','Words rise in sequence.'],['H20','Word Fade','we-h-word-fade','Words fade in sequence.'],['H21','Word Slide','we-h-word-slide','Words slide in sequence.'],['H22','Word Focus','we-h-word-focus','Words sharpen in sequence.'],['H23','Letter Rise','we-h-letter-rise','Letters rise in sequence.'],['H24','YO·GÜD Reveal','we-h-yogud-reveal','A wider editorial reveal.']
+    ];
+    const backgrounds = [
+      ['P01','Background Gentle Rise','we-p-gentle-rise','Subtle upward background movement.'],['P02','Background Deep Rise','we-p-deep-rise','Stronger upward background movement.'],['P03','Background Reverse','we-p-reverse','Moves in the reverse direction.'],['P04','Background Drift Left','we-p-drift-left','Horizontal movement to the left.'],['P05','Background Drift Right','we-p-drift-right','Horizontal movement to the right.'],['P06','Background Diagonal','we-p-diagonal','Diagonal background movement.'],['P07','Background Zoom In','we-p-zoom-in','Slow background zoom in.'],['P08','Background Zoom Out','we-p-zoom-out','Slow background zoom out.']
+    ];
+    const components = [
+      {id:'W08–W10',name:'Native Widget Details',description:'Arrow Turn, Circle Arrow and Outer Round Tabs for native Elementor widgets.',preview:'details'},
+      {id:'W04',name:'Accordion Carousel',description:'Expanding image cards using native editable Elementor carousel content.',preview:'accordion'},
+      {id:'P-EX',name:'Parallax Container Example',description:'A complete background section example with its own movement engine.',preview:'background'},
+      {id:'W07',name:'Image Heading Tabs',description:'Installable Elementor plugin with image tabs, rich panels and optional video.',preview:'tabs'},
+      {id:'W17',name:'Scroll Switch Header',description:'Transparent header that changes background, text colour, logo and height after scrolling.',preview:'header'},
+      {id:'W18',name:'One Box Accordion',description:'Keeps each Elementor Nested Accordion title and panel inside one continuous rounded outline.',preview:'onebox'},
+      {id:'W19',name:'Hover Image Box',description:'Single-image Elementor card with hover reveal, optional icon and button, and button-only or whole-box links.',preview:'hoverbox'}
+    ];
+
+    function headingCard(item) {
+      const [id,name,className,description] = item;
+      return `<article class="card run" data-type="heading" data-id="${id}" data-search="${id} ${name} ${className} ${description}"><div class="preview"><button class="replay" type="button">Replay</button><div class="preview-heading">A little motion.<br><em>A lasting impression.</em></div></div><div class="body"><div class="meta"><span class="code-id">${id}</span><span class="type">Heading</span></div><h3>${name}</h3><p class="description">${description}</p></div></article>`;
+    }
+    function backgroundCard(item) {
+      const [id,name,className,description] = item;
+      return `<article class="card run" data-type="background" data-id="${id}" data-search="${id} ${name} ${className} ${description}"><div class="preview"><button class="replay" type="button">Replay</button><div class="parallax-stage"></div><div class="parallax-label">${name}</div></div><div class="body"><div class="meta"><span class="code-id">${id}</span><span class="type">Background</span></div><h3>${name}</h3><p class="description">${description}</p></div></article>`;
+    }
+    function componentPreview(type) {
+      if (type === 'header') return '<div class="component-ui"><div class="mini-header"><span class="mark"></span><span class="nav"><i></i><i></i><i></i></span></div><div class="mini-header solid"><span class="mark"></span><span class="nav"><i></i><i></i><i></i></span></div></div>';
+      if (type === 'tabs') return '<div class="component-ui"><div class="mini-tabs"><span>First</span><span>Second</span><span>Third</span></div><div class="mini-panel"><i></i><i></i></div></div>';
+      if (type === 'accordion') return '<div class="mini-accordion"><i></i><i></i><i></i></div>';
+      if (type === 'onebox') return '<div class="component-ui"><div class="mini-panel" style="display:block;height:auto;padding:0;border-radius:14px;overflow:hidden"><div style="padding:12px 14px;border-bottom:1px solid var(--line);font-size:11px;font-weight:700">− &nbsp; TECHNICAL SPECS</div><div style="height:48px;margin:12px 14px;background:#dce2d8"></div></div><div class="mini-panel" style="display:block;height:auto;padding:12px 14px;border-radius:14px;font-size:11px;font-weight:700">+ &nbsp; SAFETY INFORMATION</div></div>';
+      if (type === 'hoverbox') return '<div class="mini-hover-box" tabindex="0"><div class="mini-hover-caption"><div class="mini-hover-title">Hover Image Box</div><div class="mini-hover-reveal"><span><span class="mini-hover-text">Move over the image to reveal the supporting text.</span></span></div></div></div>';
+      if (type === 'details') return '<div class="mini-details"><i>↗</i><i>→</i><i>↘</i></div>';
+      return '<div class="parallax-stage"></div><div class="parallax-label">Background section</div>';
+    }
+    function componentCard(item) {
+
+      return `<article class="card" data-type="component" data-id="${item.id}" data-search="${item.id} ${item.name} ${item.description}"><div class="preview component-preview">${componentPreview(item.preview)}</div><div class="body"><div class="meta"><span class="code-id">${item.id}</span><span class="type">Component</span></div><h3>${item.name}</h3><p class="description">${item.description}</p></div></article>`;
+    }
+
+    document.getElementById('heading-grid').innerHTML = headings.map(headingCard).join('');
+    document.getElementById('background-grid').innerHTML = backgrounds.map(backgroundCard).join('');
+    document.getElementById('component-grid').innerHTML = components.map(componentCard).join('');
+
+    let activeFilter = 'all';
+    const search = document.getElementById('search');
+    const notice = document.getElementById('notice');
+    function applyFilters() {
+      const query = search.value.trim().toLowerCase();
+      let visibleCount = 0;
+      document.querySelectorAll('.card').forEach(card => {
+        const typeMatch = activeFilter === 'all' || card.dataset.type === activeFilter;
+        const textMatch = !query || card.dataset.search.toLowerCase().includes(query);
+        card.hidden = !(typeMatch && textMatch);
+        if (!card.hidden) visibleCount += 1;
+      });
+      document.querySelectorAll('[data-section]').forEach(section => {
+        section.hidden = !Array.from(section.querySelectorAll('.card')).some(card => !card.hidden);
+      });
+      document.getElementById('empty').style.display = visibleCount ? 'none' : 'block';
+    }
+    search.addEventListener('input', applyFilters);
+    document.querySelectorAll('.filter').forEach(button => button.addEventListener('click', () => {
+      activeFilter = button.dataset.filter;
+      document.querySelectorAll('.filter').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+      applyFilters();
+    }));
+    document.addEventListener('click', async event => {
+      const replay = event.target.closest('.replay');
+      if (replay) {
+        const card = replay.closest('.card');
+        card.classList.remove('run');
+        void card.offsetWidth;
+        card.classList.add('run');
+      }
+      const copy = event.target.closest('.copy');
+      if (copy) {
+        try {
+          await navigator.clipboard.writeText(copy.dataset.request);
+          notice.textContent = 'Request copied.';
+        } catch (error) {
+          notice.textContent = copy.dataset.request;
+        }
+        window.setTimeout(() => { notice.textContent = ''; }, 2500);
+      }
+    });
+  </script>
+</body>
+</html>
