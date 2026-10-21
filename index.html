@@ -165,7 +165,7 @@
           <div class="stats">
             <div class="stat"><strong>24</strong><span>Heading effects</span></div>
             <div class="stat"><strong>09</strong><span>Background effects</span></div>
-            <div class="stat"><strong>07</strong><span>Reusable components</span></div>
+            <div class="stat"><strong>08</strong><span>Reusable components</span></div>
           </div>
         </div>
       </div>
@@ -211,6 +211,7 @@
       ['P01','Background Gentle Rise','we-p-gentle-rise','Subtle upward background movement.'],['P02','Background Deep Rise','we-p-deep-rise','Stronger upward background movement.'],['P03','Background Reverse','we-p-reverse','Moves in the reverse direction.'],['P04','Background Drift Left','we-p-drift-left','Horizontal movement to the left.'],['P05','Background Drift Right','we-p-drift-right','Horizontal movement to the right.'],['P06','Background Diagonal','we-p-diagonal','Diagonal background movement.'],['P07','Background Zoom In','we-p-zoom-in','Slow background zoom in.'],['P08','Background Zoom Out','we-p-zoom-out','Slow background zoom out.'],['P09','Knox Gentle Float','we-p-knox-gentle-float','A restrained 60px image float with 1.1 overscan, synced smoothly to the full viewport pass.']
     ];
     const components = [
+      {id:'NAV01',name:'Fluid Full-screen Menu',description:'A transparent downward reveal, staggered menu links, contact details and scrolling text. Try the two-line menu icon.',preview:'fluid-menu'},
       {id:'W08–W10',name:'Native Widget Details',description:'Arrow Turn, Circle Arrow and Outer Round Tabs for native Elementor widgets.',preview:'details'},
       {id:'W04',name:'Accordion Carousel',description:'Expanding image cards using native editable Elementor carousel content.',preview:'accordion'},
       {id:'P-EX',name:'Parallax Container Example',description:'A complete background section example with its own movement engine.',preview:'background'},
@@ -238,6 +239,8 @@
       return '<div class="parallax-stage"></div><div class="parallax-label">Background section</div>';
     }
     function componentCard(item) {
+      if (item.preview === 'fluid-menu') return `<article id="fluid-fullscreen-menu" class="card" data-type="component" data-id="NAV01" data-search="NAV01 Fluid Full-screen Menu mobile tablet lovera navigation transparent drawer"><div class="body"><div class="meta"><span class="code-id">NAV01</span><span class="type">Navigation demo</span></div><h3>Fluid Full-screen Menu</h3><p class="description">Click the two-line icon. Try Services, close, reopen or press Escape.</p></div><iframe loading="lazy" title="Fluid Full-screen Menu interactive demonstration" src="navigation/fluid-fullscreen-menu/preview.html" style="display:block;width:100%;height:550px;border:0"></iframe><div class="body"><a class="action primary" href="navigation/fluid-fullscreen-menu/preview.html" target="_blank" rel="noopener">Open full-size demo ↗</a><p class="description" style="margin-top:12px">Live demonstration only. Installation source stays private.</p></div></article>`;
+
 
       return `<article class="card" data-type="component" data-id="${item.id}" data-search="${item.id} ${item.name} ${item.description}"><div class="preview component-preview">${componentPreview(item.preview)}</div><div class="body"><div class="meta"><span class="code-id">${item.id}</span><span class="type">Component</span></div><h3>${item.name}</h3><p class="description">${item.description}</p></div></article>`;
     }
@@ -291,3 +294,4 @@
   </script>
 </body>
 </html>
+
