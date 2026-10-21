@@ -239,7 +239,7 @@
       return '<div class="parallax-stage"></div><div class="parallax-label">Background section</div>';
     }
     function componentCard(item) {
-      if (item.preview === 'fluid-menu') return `<article id="fluid-fullscreen-menu" class="card" data-type="component" data-id="NAV01" data-search="NAV01 Fluid Full-screen Menu mobile tablet lovera navigation transparent drawer"><div class="body"><div class="meta"><span class="code-id">NAV01</span><span class="type">Navigation demo</span></div><h3>Fluid Full-screen Menu</h3><p class="description">Click the two-line icon. Try Services, close, reopen or press Escape.</p></div><iframe loading="lazy" title="Fluid Full-screen Menu interactive demonstration" src="navigation/fluid-fullscreen-menu/preview.html" style="display:block;width:100%;height:550px;border:0"></iframe><div class="body"><a class="action primary" href="navigation/fluid-fullscreen-menu/preview.html" target="_blank" rel="noopener">Open full-size demo ↗</a><p class="description" style="margin-top:12px">Live demonstration only. Installation source stays private.</p></div></article>`;
+      if (item.preview === 'fluid-menu') return `<article id="fluid-fullscreen-menu" class="card" data-type="component" data-id="NAV01" data-search="NAV01 Fluid Full-screen Menu mobile tablet lovera navigation transparent drawer"><div class="body"><div class="meta"><span class="code-id">NAV01</span><span class="type">Navigation demo</span></div><h3>Fluid Full-screen Menu</h3><p class="description">Click the two-line icon. Try Services, close, reopen or press Escape.</p></div><iframe loading="eager" title="Fluid Full-screen Menu interactive demonstration" src="navigation/fluid-fullscreen-menu/preview.html" style="display:block;width:100%;height:550px;border:0"></iframe><div class="body"><a class="action primary" href="navigation/fluid-fullscreen-menu/preview.html" target="_blank" rel="noopener">Open full-size demo ↗</a><p class="description" style="margin-top:12px">Live demonstration only. Installation source stays private.</p></div></article>`;
 
 
       return `<article class="card" data-type="component" data-id="${item.id}" data-search="${item.id} ${item.name} ${item.description}"><div class="preview component-preview">${componentPreview(item.preview)}</div><div class="body"><div class="meta"><span class="code-id">${item.id}</span><span class="type">Component</span></div><h3>${item.name}</h3><p class="description">${item.description}</p></div></article>`;
@@ -294,4 +294,5 @@
   </script>
 </body>
 </html>
+
 
